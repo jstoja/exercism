@@ -1,12 +1,11 @@
 class Bob
   def hey(string)
-
-    string.strip! unless string.nil?
-    if string.nil? or string.empty?
+    case
+    when (string.nil? or string.strip.empty?) then
       'Fine. Be that way!'
-    elsif string == string.upcase
+    when string == string.upcase then
       'Woah, chill out!'
-    elsif string.end_with?('?')
+    when string.strip.end_with?('?') then
       'Sure.'
     else
       'Whatever.'
